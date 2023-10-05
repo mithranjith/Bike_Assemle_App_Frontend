@@ -1,0 +1,374 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .react-datepicker {
+    @apply !border-n-8 !rounded-lg !font-inter shadow-[0_0_1rem_0.25rem_rgba(0,0,0,0.04),0_2rem_2rem_-1rem_rgba(0,0,0,0.1)] overflow-hidden dark:bg-n-7 dark:!border-n-5;
+  }
+  .react-datepicker .react-datepicker__header {
+    @apply bg-transparent border-none;
+  }
+  .react-datepicker .react-datepicker__current-month {
+    @apply base2 font-semibold text-n-4/75;
+  }
+  .react-datepicker .react-datepicker__navigation {
+    @apply top-1.5;
+  }
+  .react-datepicker .react-datepicker__navigation-icon::before {
+    @apply transition-colors dark:border-n-4;
+  }
+  .react-datepicker
+    .react-datepicker__navigation:hover
+    .react-datepicker__navigation-icon::before {
+    @apply dark:border-n-8;
+  }
+  .react-datepicker .react-datepicker__triangle {
+    @apply hidden;
+  }
+  .react-datepicker .react-datepicker__day-name {
+    @apply pt-2 caption2 font-semibold text-n-5;
+  }
+  .react-datepicker .react-datepicker__day {
+    @apply py-[0.22rem] rounded caption1 transition-colors dark:text-n-1 dark:hover:text-n-7;
+  }
+  .react-datepicker .react-datepicker__day.past {
+    @apply text-n-4/50 pointer-events-none;
+  }
+  .react-datepicker .react-datepicker__day--today {
+    @apply bg-n-3 text-n-1;
+  }
+  .react-datepicker .react-datepicker__day--today.past {
+    @apply text-n-7 pointer-events-auto;
+  }
+  .react-datepicker .react-datepicker__day--selected {
+    @apply bg-primary-1 !text-n-1;
+  }
+  .react-datepicker .react-datepicker__day--keyboard-selected {
+    @apply bg-transparent;
+  }
+  .react-datepicker .react-datepicker__day--outside-month {
+    @apply opacity-0 invisible;
+  }
+  .react-datepicker .react-datepicker__time-container,
+  .react-datepicker
+    .react-datepicker__time-container
+    .react-datepicker__time
+    .react-datepicker__time-box {
+    @apply w-[15rem] text-left dark:bg-n-7 dark:border-n-5 !rounded-lg;
+  }
+  .react-datepicker .react-datepicker__time-container .react-datepicker__time {
+    @apply bg-transparent;
+  }
+  .react-datepicker .react-datepicker__header--time {
+    @apply hidden;
+  }
+  .react-datepicker .react-datepicker__time-list-item {
+    @apply transition-colors;
+  }
+  .react-datepicker
+    .react-datepicker__time-container
+    .react-datepicker__time
+    .react-datepicker__time-box
+    ul.react-datepicker__time-list
+    li.react-datepicker__time-list-item {
+    @apply pl-5 leading-normal dark:text-n-4 dark:hover:text-n-7;
+  }
+  .react-datepicker
+    .react-datepicker__time-container
+    .react-datepicker__time
+    .react-datepicker__time-box
+    ul.react-datepicker__time-list
+    li.react-datepicker__time-list-item--selected {
+    @apply bg-primary-1 text-n-1 dark:text-n-1;
+  }
+
+  .multiselect .multiselect__control {
+    @apply min-h-[3.25rem] p-0 border-2 rounded-md base1 shadow-none outline-none transition-colors cursor-pointer bg-n-3/50  dark:bg-transparent;
+  }
+  .multiselect .multiselect__control.multiselect__control--menu-is-open {
+    /* @apply border-primary-1; */
+  }
+  .multiselect .multiselect__value-container {
+    @apply py-0 pr-0;
+    /* @apply pl-13 py-0 pr-0; */
+  }
+  .multiselect-access .multiselect__value-container {
+    @apply pr-32;
+  }
+  .multiselect .multiselect__input {
+    @apply dark:!text-n-1;
+  }
+  .multiselect .multiselect__input:focus {
+    @apply md:base1;
+  }
+  .multiselect .multiselect__placeholder {
+    @apply text-n-2/50;
+  }
+  .multiselect .multiselect__value-container--has-value {
+    @apply pl-0;
+  }
+  .multiselect .multiselect__multi-value {
+    @apply m-1 p-2 rounded-lg bg-n-2 fill-n-4/50 transition-colors hover:!bg-primary-1 hover:text-n-1 hover:fill-n-1 dark:bg-n-6;
+  }
+  .multiselect .multiselect__multi-value__label {
+    @apply p-0 text-inherit transition-none;
+  }
+  .multiselect .multiselect__multi-value__remove {
+    @apply p-0 hover:!bg-transparent hover:scale-110;
+  }
+  .multiselect .multiselect__indicators {
+    @apply hidden;
+  }
+  .multiselect .multiselect__menu {
+    @apply z-10 mt-2 p-2 shadow-[inset_0_0_0_0.0625rem_#E8ECEF,0_0_1rem_0.25rem_rgba(0,0,0,0.04),0_2rem_2rem_-1rem_rgba(0,0,0,0.1)] rounded-xl dark:bg-n-7 dark:shadow-[inset_0_0_0_0.0625rem_#343839,0_0_1rem_0.25rem_rgba(0,0,0,0.04),0_2rem_2rem_-1rem_rgba(0,0,0,0.1)];
+  }
+  .multiselect .multiselect__menu-list {
+    @apply max-h-[12rem] p-0 overflow-auto scroll-smooth;
+  }
+  .multiselect .multiselect__option {
+    @apply flex items-center px-2 py-2.5 rounded-xl transition-colors cursor-pointer;
+  }
+  .multiselect .multiselect__option--is-focused {
+    @apply bg-n-3/50 dark:bg-n-6;
+  }
+}
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: inherit;
+}
+.marquee div {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 15s linear infinite;
+}
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+.color-picker[type="color"] {
+  -webkit-appearance: none;
+  border: 1px;
+  width: 28px;
+  height: 30px;
+  border-radius: 8px;
+  background: none;
+  display: flex;
+  align-items: center;
+  padding-top: 0.5px;
+}
+.color-picker[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 1px;
+  border-radius: 7px;
+  background-color: none;
+}
+.color-picker[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 7px;
+}
+
+.tss-1dccma1-MUIDataTablePagination-toolbar {
+  @apply dark:text-white;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+  @apply dark:text-white;
+}
+
+.tss-tlx3x1-MUIDataTableToolbar-root {
+  @apply bg-gray-200 dark:bg-n-4 rounded-t-lg  w-auto sm:w-full   sm:flex !important;
+}
+.tss-gm6zfk-MUIDataTableHeadCell-fixedHeader {
+  @apply bg-gray-200 dark:bg-n-6  dark:text-white;
+}
+.css-1x51dt5-MuiInputBase-input-MuiInput-input {
+  @apply block;
+}
+.tss-1fz5efq-MUIDataTableToolbar-left {
+  @apply sm:p-1 !important;
+}
+
+.css-pdct74-MuiTablePagination-selectLabel {
+  @apply hidden;
+}
+.css-194a1fa-MuiSelect-select-MuiInputBase-input.css-194a1fa-MuiSelect-select-MuiInputBase-input.css-194a1fa-MuiSelect-select-MuiInputBase-input {
+  @apply hidden;
+}
+.css-wjh20t-MuiPagination-ul {
+  @apply justify-center p-4;
+}
+.css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root.Mui-disabled {
+  @apply bg-blue-300 !important;
+}
+.css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root {
+  @apply hover:bg-blue-50  bg-blue-300 !important;
+}
+.tss-1937jnc-MUIDataTableHead-main {
+  @apply bg-blue-300 !important;
+}
+.question-table .MuiTableCell-head {
+  background-color: #343839 !important;
+}
+
+.question-table-dark .MuiTableCell-head {
+  background-color: #a2a2a2ab !important;
+}
+.question-table th[data-colindex="0"] {
+  border-top-left-radius: 0px !important;
+}
+.question-table th[data-colindex="4"] {
+  border-top-right-radius: 0px !important;
+}
+.question-table
+  .css-1qgma8u-MuiButtonBase-root-MuiTableSortLabel-root.Mui-active,
+.question-table .tss-bd2lw8-MUIDataTableHeadCell-sortActive,
+.question-table
+  .css-1qgma8u-MuiButtonBase-root-MuiTableSortLabel-root.Mui-active
+  .MuiTableSortLabel-icon {
+  color: white !important;
+}
+.chip {
+  background-color: #aacef8 !important;
+  border-radius: 20px !important;
+  padding: 4px !important;
+  color: black !important;
+  margin-top: 4px !important;
+}
+
+.custom-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
+  color: white;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  padding: 16px;
+  border-radius: 12px;
+  background: #34383980; /* Set the background color of the legend */
+}
+
+.legend-color {
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+  border-radius: 50%;
+}
+
+.MuiPaginationItem-circular {
+  height: 50px !important;
+  width: 50px !important;
+  border-radius: 50% !important;
+  background-color: #edefff !important;
+}
+.MuiPaginationItem-root[aria-current="true"],
+.MuiPaginationItem-previousNext {
+  background-color: #b5bdff !important;
+}
+.MuiPaginationItem-ellipsis {
+  color: grey !important;
+  background: none !important;
+  padding-top: 10px;
+}
+.MuiPagination-ul {
+  justify-content: center !important;
+}
+.MuiDataGrid-virtualScrollerRenderZone {
+  text-overflow: clip !important;
+
+  gap: 10px;
+}
+.MuiDataGrid-root {
+  text-overflow: clip !important;
+}
+
+.MuiDataGrid-columnHeaderTitle {
+  text-overflow: clip !important;
+  @apply dark:text-n-1 text-n-7 border-black  text-2xl text-clip;
+}
+.MuiDataGrid-row {
+  @apply text-clip w-[100%];
+}
+.MuiDataGrid-cell {
+  @apply text-clip;
+}
+.MuiDataGrid-virtualScroller {
+  @apply dark:text-n-1 text-n-7 text-xl text-clip border-black;
+}
+.MuiTablePagination-root:last-child {
+  @apply dark:text-n-1 text-n-7 border-black;
+}
+.MuiDataGrid-root .MuiDataGrid-withBorderColor {
+  @apply dark:text-n-1 text-n-7 border-black;
+}
+
+.kigukv {
+  @apply !bg-n-7 dark:!bg-n-5  !border-transparent !h-[75px] !rounded-t-2xl !bg-transparent;
+}
+
+.buGObk {
+  @apply dark:!text-n-1 !text-xl dark:!bg-n-5  !bg-n-3 !rounded-t-2xl;
+}
+
+.isdzTY {
+  @apply !font-semibold !text-n-1  dark:!text-n-7 !text-xl;
+}
+
+.buGObk {
+  @apply !text-n-1 dark:!text-n-1 !font-bold !text-xl md:!text-md;
+}
+
+.fWlzdU {
+  @apply !bg-n-2 dark:!bg-n-7 !font-semibold  !border-transparent;
+}
+
+.VqMBs {
+  @apply !rounded-t-3xl !text-xl;
+}
+
+.isdzTY {
+  @apply !text-xl !text-n-7;
+}
+
+.iXeXIX {
+  @apply !justify-center;
+}
+.bPokRt {
+  @apply !text-[15px] !bg-n-2 dark:!bg-n-7 !font-semibold  !tracking-normal !text-n-7 dark:!text-n-1 !h-[75px] !overflow-visible !border-b !border-n-4;
+}
+.jkvqIb {
+  @apply !bg-transparent;
+}
+.css-1v5z4dq-MuiPaper-root-MuiCard-root {
+  @apply !p-1 !pt-2 w-full dark:text-n-1 dark:bg-n-7 !rounded-2xl !mb-3;
+}
+.css-9mgopn-MuiDivider-root {
+  @apply !w-full dark:border-n-5;
+}
+.dahnUA {
+  @apply !overflow-visible;
+}
+.jkvqIb {
+  @apply !bg-transparent;
+}
+.rdt_Pagination {
+  @apply dark:!bg-n-7 !text-n-4 dark:!text-n-1;
+}
+.hwVeUK:disabled {
+  @apply dark:!fill-n-4 dark:!text-n-4;
+}
+
+.react-datepicker {
+  @apply !mt-18 !-ml-48 !bg-n-7 !cursor-pointer dark:text-n-1;
+}
